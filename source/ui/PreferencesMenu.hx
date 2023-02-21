@@ -34,7 +34,9 @@ class PreferencesMenu extends ui.OptionsState.Page
 		createPrefItem('downscroll', 'downscroll', false);
 		createPrefItem('flashing menu', 'flashing-menu', true);
 		createPrefItem('Camera Zooming on Beat', 'camera-zoom', true);
+		#if desktop
 		createPrefItem('FPS Counter', 'fps-counter', true);
+		#end
 		createPrefItem('Auto Pause', 'auto-pause', false);
 
 		camFollow = new FlxObject(FlxG.width / 2, 0, 140, 70);
@@ -69,7 +71,9 @@ class PreferencesMenu extends ui.OptionsState.Page
 		preferenceCheck('downscroll', false);
 		preferenceCheck('flashing-menu', true);
 		preferenceCheck('camera-zoom', true);
+		#if desktop
 		preferenceCheck('fps-counter', true);
+		#end
 		preferenceCheck('auto-pause', false);
 		preferenceCheck('master-volume', 1);
 
@@ -78,8 +82,10 @@ class PreferencesMenu extends ui.OptionsState.Page
 		FlxG.sound.muted = true;
 		#end
 
+		#if desktop
 		if (!getPref('fps-counter'))
 			FlxG.stage.removeChild(Main.fpsCounter);
+		#end
 
 		FlxG.autoPause = getPref('auto-pause');
 	}
@@ -132,16 +138,20 @@ class PreferencesMenu extends ui.OptionsState.Page
 
 		switch (prefName)
 		{
+			#if desktop
 			case 'fps-counter':
 				if (getPref('fps-counter'))
 					FlxG.stage.addChild(Main.fpsCounter);
 				else
 					FlxG.stage.removeChild(Main.fpsCounter);
+			#end
 			case 'auto-pause':
 				FlxG.autoPause = getPref('auto-pause');
 		}
 
+		#if desktop
 		if (prefName == 'fps-counter') {}
+		#end
 	}
 
 	override function update(elapsed:Float)

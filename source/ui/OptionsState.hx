@@ -179,7 +179,7 @@ class OptionsMenu extends Page
 		add(items = new TextMenuList());
 		createItem('preferences', function() switchPage(Preferences));
 		createItem("controls", function() switchPage(Controls));
-		// createItem('colors', function() switchPage(Colors));
+	    //createItem('colors', function() switchPage(Colors));
 		#if cpp
 		createItem('mods', function() switchPage(Mods));
 		#end
