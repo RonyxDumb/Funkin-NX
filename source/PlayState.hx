@@ -1949,6 +1949,7 @@ class PlayState extends MusicBeatState
 			#end
 		}
 
+		#if debug
 		if (FlxG.keys.justPressed.SEVEN)
 		{
 			FlxG.switchState(new ChartingState());
@@ -1957,9 +1958,12 @@ class PlayState extends MusicBeatState
 			DiscordClient.changePresence("Chart Editor", null, null, true);
 			#end
 		}
+		#end
 
+		#if debug
 		if (FlxG.keys.justPressed.NINE)
 			iconP1.swapOldIcon();
+		#end
 
 		// FlxG.watch.addQuick('VOL', vocals.amplitudeLeft);
 		// FlxG.watch.addQuick('VOLRight', vocals.amplitudeRight);
@@ -2062,13 +2066,15 @@ class PlayState extends MusicBeatState
 
 		if (!inCutscene && !_exiting)
 		{
+			/* Togliamolo, darebbe solo fastidio al GamePad e alla partita stessa.
 			// RESET = Quick Game Over Screen
 			if (controls.RESET)
 			{
 				health = 0;
 				trace("RESET = True");
 			}
-
+			*/ 
+			
 			#if CAN_CHEAT // brandon's a pussy
 			if (controls.CHEAT)
 			{
@@ -2799,7 +2805,7 @@ class PlayState extends MusicBeatState
 	function goodNoteHit(note:Note):Void
 	{
 		if (!note.wasGoodHit)
-		{
+		{	
 			if (!note.isSustainNote)
 			{
 				combo += 1;

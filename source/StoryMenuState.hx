@@ -29,8 +29,12 @@ class StoryMenuState extends MusicBeatState
 		['Pico', 'Philly', "Blammed"],
 		['Satin-Panties', "High", "Milf"],
 		['Cocoa', 'Eggnog', 'Winter-Horrorland'],
+		#if html5
 		['Senpai', 'Roses', 'Thorns'],
 		['Ugh', 'Guns', 'Stress']
+		#else
+		['Senpai', 'Roses', 'Thorns']
+		#end // solo su Html5 funzionano le Cutscene
 	];
 	var curDifficulty:Int = 1;
 
@@ -43,8 +47,12 @@ class StoryMenuState extends MusicBeatState
 		['pico', 'bf', 'gf'],
 		['mom', 'bf', 'gf'],
 		['parents-christmas', 'bf', 'gf'],
+		#if html5
 		['senpai', 'bf', 'gf'],
 		['tankman', 'bf', 'gf']
+		#else
+		['senpai', 'bf', 'gf']
+		#end // pure qui, hotfix
 	];
 
 	var weekNames:Array<String> = [
@@ -54,8 +62,12 @@ class StoryMenuState extends MusicBeatState
 		"PICO",
 		"MOMMY MUST MURDER",
 		"RED SNOW",
+		#if html5
 		"hating simulator ft. moawling",
 		"TANKMAN"
+		#else
+		"hating simulator ft. moawling"
+		#end // pure qui
 	];
 
 	var txtWeekTitle:FlxText;

@@ -91,6 +91,7 @@ class MainMenuState extends MusicBeatState
 		});
 
 		menuItems.enabled = false; // disable for intro
+		// prepariamo per la versione per Switch. INIZIO = 21/02/2022
 		menuItems.createItem('story mode', function() startExitState(new StoryMenuState()));
 		menuItems.createItem('freeplay', function() startExitState(new FreeplayState()));
 		// addMenuItem('options', function () startExitState(new OptionMenu()));
@@ -129,7 +130,12 @@ class MainMenuState extends MusicBeatState
 		versionShit.setFormat("VCR OSD Mono", 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		add(versionShit);
 
+		#if switch
+		versionShit.text += '(Nintendo Switch exclusive preview)';
+		#else
 		versionShit.text += '(Newgrounds exclusive preview)';
+		#end
+
 
 		// NG.core.calls.event.logEvent('swag').send();
 
