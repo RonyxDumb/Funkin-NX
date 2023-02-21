@@ -1,4 +1,11 @@
-# Friday Night Funkin
+# Friday Night Funkin' (Switch Port)
+Fork di Friday Night Funkin' (Funkin ^Su Github^) in cui si lavorava sull porting per Switch
+## Perchè è cominciato? Non esisteva già?
+Certo. Un'amico di Ninjamuffin99 ha già fatto quello che avevo in mente io. Ma...
+L'iniziativa per questo Repository è aggiustare FNF per Switch, in alcune parti.
+(Ad esempio nella modalità StoryMode, le Cutscene della Week7 funzionano solo nell'output Html5)
+(Nelle impostazioni, "FPS" e le sue correlate cose, funzionano solo per Desktop e Html5)
+[21/02/2022] Questo proggetto è iniziato il 21/02/2022, ma ancora non è finito. L'ho cominciato perchè sto iniziando a mettermi i soldi da parte per comparmi i DevKit di NX (Nintendo Switch).
 
 This is the repository for Friday Night Funkin, a game originally made for Ludum Dare 47 "Stuck In a Loop".
 

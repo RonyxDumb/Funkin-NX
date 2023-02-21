@@ -6,6 +6,8 @@
 
 	<!--Switch Export with Unique ApplicationID and Icon-->
 	<set name="APP_ID" value="0x0100f6c013bbc000" />
+	<!-- Dal 21/02/2023, ho iniziato a portare FNF per Switch,
+	 e nel frattempo, metto soldi da parte per acquistarmi il DevKit NX -->
 
 	<!--The flixel preloader is not accurate in Chrome. You can use it regularly if you embed the swf into a html file
 		or you can set the actual size of your file manually at "FlxPreloaderBase-onUpdate-bytesTotal"-->
@@ -124,8 +126,9 @@
 	<haxelib name="flixel-ui" />
 	<!--haxelib name="newgrounds" unless="switch"/> -->
 	<haxelib name="faxe" if='switch'/>
+	<haxelib name="openfl"/> <!--Sentite, non so se serve, ma è per Swicth-->
 	<haxelib name="polymod"/>
-	<haxelib name="newgrounds"/>
+	<haxelib name="newgrounds" unless="mobile"/>
 	<haxelib name="hxcpp-debug-server" if="desktop debug"/>
 	
 	<!-- <haxelib name="flixel-animate" /> -->
@@ -133,7 +136,7 @@
 	<!-- https://github.com/ninjamuffin99/Flixel-Animate-Atlas-Player -->
 
 
-	<!--<haxelib name="discord_rpc" if="cpp"/> --> <!-- foesn't work with neko -->
+	<!--<haxelib name="discord_rpc" if="cpp"/> --> <!-- doesn't work with neko -->
 	<!-- <haxelib name="hxcpp-debug-server" if="desktop"/> -->
 
 	<!-- <haxelib name="markdown" /> -->
