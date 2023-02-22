@@ -1,5 +1,5 @@
-# Friday Night Funkin' (Switch Port)
-Fork di Friday Night Funkin' (Funkin ^Su Github^) in cui si lavorava sull porting per Switch
+# Friday Night Funkin' (NX Port)
+Fork di Friday Night Funkin' (Funkin) in cui si lavorava sull porting per Switch
 ## Perchè è cominciato? Non esisteva già?
 Certo. Un'amico di Ninjamuffin99 ha già fatto quello che avevo in mente io. Ma...
 L'iniziativa per questo Repository è aggiustare FNF per Switch, in alcune parti.
