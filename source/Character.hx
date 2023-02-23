@@ -73,6 +73,7 @@ class Character extends FlxSprite
 				loadOffsetFile(curCharacter);
 
 				playAnim('danceRight');
+				
 			case 'gf-tankmen':
 				frames = Paths.getSparrowAtlas('characters/gfTankmen');
 				animation.addByIndices('sad', 'GF Crying at Gunpoint', [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], "", 24, true);

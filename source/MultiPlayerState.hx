@@ -22,7 +22,7 @@ class MultiPlayerState extends MusicBeatState
         bg.screenCenter();
         add(bg);
 
-        var testo = new FlxText(370.49, 107.75, 0, "ONLINE LOBBY" + "Join a Online Lobby?", 40);
+        var testo = new FlxText(370.49, 107.75, 0, "ONLINE LOBBY" + "   Join a Online Lobby?", 40);
         testo.setFormat("VCR OSD Mono", 40, FlxColor.WHITE);
         add(testo);
 

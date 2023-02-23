@@ -1,7 +1,9 @@
 package;
 
+
 import flixel.FlxG;
 import flixel.FlxSprite;
+import flixel.input.gamepad.FlxGamepad;
 import flixel.graphics.frames.FlxAtlasFrames;
 
 class GitarooPause extends MusicBeatState
@@ -52,10 +54,17 @@ class GitarooPause extends MusicBeatState
 
 	override function update(elapsed:Float)
 	{
-		if (controls.UI_LEFT_P || controls.UI_RIGHT_P)
+		var gamepad:FlxGamepad = FlxG.gamepads.lastActive;
+        
+		if (gamepad != null)
+        {
+            updateGamepadInput(gamepad);
+        }
+
+		if (gamepad.analog.justMoved.RIGHT_STICK || controls.UI_LEFT_P || controls.UI_RIGHT_P || gamepad.analog.justMoved.LEFT_STICK)
 			changeThing();
 
-		if (controls.ACCEPT)
+		if (controls.ACCEPT || gamepad.justPressed.START || gamepad.justPressed.A)
 		{
 			if (replaySelect)
 			{
@@ -69,6 +78,19 @@ class GitarooPause extends MusicBeatState
 
 		super.update(elapsed);
 	}
+
+	function updateGamepadInput(gamepad:FlxGamepad):Void
+		{
+			if (gamepad.pressed.A)
+			{
+				trace("The bottom face button of the controller is pressed.");
+			}
+	
+			if (gamepad.analog.justMoved.LEFT_STICK_X)
+			{
+				trace("The x axis of the left analog stick of the controller has been moved.");
+			}
+		}
 
 	function changeThing():Void
 	{

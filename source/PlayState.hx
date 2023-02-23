@@ -2748,9 +2748,13 @@ class PlayState extends MusicBeatState
 		});
 	}
 
+	// lasciamola anche se la vorrei rimpiazzare con
+	// il ghost tapping, ma lascio trace(""), avviene
+	// un rallentamento al gioco stesso per il troppo spam
 	function noteMiss(direction:Int = 1):Void
 	{
 		// whole function used to be encased in if (!boyfriend.stunned)
+		#if OLD_INPUT
 		health -= 0.04;
 		killCombo();
 
@@ -2779,6 +2783,7 @@ class PlayState extends MusicBeatState
 			case 3:
 				boyfriend.playAnim('singRIGHTmiss', true);
 		}
+		#end
 	}
 
 	/* not used anymore lol

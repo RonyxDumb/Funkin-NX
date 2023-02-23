@@ -234,6 +234,24 @@ class FreeplayState extends MusicBeatState
 			FlxG.switchState(new MainMenuState());
 		}
 
+		/*
+		#if PRELOAD_ALL
+		#end
+		*/
+		
+		#if PRELOAD_ALL // solo se le risorse sono state già lette
+		if (FlxG.keys.justPressed.L)
+		{
+			// clicca L per sentire un Pre-View della canzone
+			FlxG.sound.playMusic(Paths.inst(songs[curSelected].songName), 0);
+
+		    if (songs == null) {
+				FlxG.sound.playMusic(Paths.music('freakyMenu', 'preload'), 1, true);
+			}
+		}
+		#end
+		//FlxG.sound.playMusic(Paths.inst(songs[curSelected].songName), 0);
+
 		if (accepted)
 		{
 			var poop:String = Highscore.formatSong(songs[curSelected].songName.toLowerCase(), curDifficulty);
@@ -284,7 +302,7 @@ class FreeplayState extends MusicBeatState
 		// lerpScore = 0;
 
 		#if PRELOAD_ALL
-		FlxG.sound.playMusic(Paths.inst(songs[curSelected].songName), 0);
+		//FlxG.sound.playMusic(Paths.inst(songs[curSelected].songName), 0);
 		#end
 
 		var bullShit:Int = 0;

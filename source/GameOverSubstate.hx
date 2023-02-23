@@ -60,8 +60,8 @@ class GameOverSubstate extends MusicBeatSubstate
 
 		var randomCensor:Array<Int> = [];
 
-		if (PreferencesMenu.getPref('censor-naughty'))
-			randomCensor = [1, 3, 8, 13, 17, 21];
+		//if (PreferencesMenu.getPref('censor-naughty'))
+		//	randomCensor = [1, 3, 8, 13, 17, 21];
 
 		randomGameover = FlxG.random.int(1, 25, randomCensor);
 	}
