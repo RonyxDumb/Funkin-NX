@@ -180,7 +180,8 @@ class OptionsMenu extends Page
 		createItem('preferences', function() switchPage(Preferences));
 		createItem("controls", function() switchPage(Controls));
 	    //createItem('colors', function() switchPage(Colors));
-		#if cpp
+		createItem('nx', nintendoSwitch);
+		#if desktop
 		createItem('mods', function() switchPage(Mods));
 		#end
 
@@ -212,6 +213,11 @@ class OptionsMenu extends Page
 	{
 		items.enabled = value;
 		return super.set_enabled(value);
+	}
+
+	public function nintendoSwitch()
+	{
+		FlxG.switchState(new NintendoSwitchState());
 	}
 
 	/**
@@ -284,4 +290,5 @@ enum PageName
 	Colors;
 	Mods;
 	Preferences;
+	Nx;
 }
