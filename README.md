@@ -2,13 +2,14 @@
 Friday Night Funkin' per Nintendo Switch.
 
 ### FAQ
-## Perchè è cominciato? Non esisteva già?
-Certo. Un'amico di Ninjamuffin99 ha già fatto quello che avevo in mente io. Ma...
-L'iniziativa per questo Repository è aggiustare FNF per Switch, in alcune parti.
-(Ad esempio nella modalità StoryMode, le Cutscene della Week7 funzionano solo nell'output Html5)
-(Nelle impostazioni, "FPS" e le sue correlate cose, funzionano solo per Desktop e Html5)
-[21/02/2022] Questo proggetto è iniziato il 21/02/2022, ma ancora non è finito. L'ho cominciato perchè sto iniziando a mettermi i soldi da parte per comparmi i DevKit di NX (Nintendo Switch).
+## Ma l'hai iniziato tu?
+No. Nel codice sorgente erano già presenti codici riferiti a Nintendo Switch. Un compagno di Ninjamuffin99
+aveva già iniziato (lui ha già il DevKit NX). Invece io ho continuato a perfezionare il codice in alcune
+parti in cui mancava totalmente il supporto a Nintendo Switch.
 
+## Perchè è cominciato questo?
+- [21/02/2023] Ho iniziato a mettere soldi da parte per comprarmi il Devkit di Nintendo Switch (NX)
+(ad esempio facendo lavoretti un pò quà, un pò là. Ma ci vorrà abbastanza tempo.  Somma da raggiungere = €430)
 
 ### FNF-DESCRIZIONE
 This is the repository for Friday Night Funkin, a game originally made for Ludum Dare 47 "Stuck In a Loop".
@@ -64,26 +65,8 @@ You should have everything ready for compiling the game! Follow the guide below 
 At the moment, you can optionally fix the transition bug in songs with zoomed-out cameras.
 - Run `haxelib git flixel-addons https://github.com/HaxeFlixel/flixel-addons` in the terminal/command-prompt.
 
-### Ignored files
-
-I gitignore the API keys for the game so that no one can nab them and post fake high scores on the leaderboards. But because of that the game
-doesn't compile without it.
-
-Just make a file in `/source` and call it `APIStuff.hx`, and copy & paste this into it
-
-```haxe
-package;
-
-class APIStuff
-{
-	inline public static var API:String = "51348:TtzK0rZ8";
-	inline public static var EncKey:String = "5NqKsSVSNKHbF9fPgZPqPg==";
-	inline public static var SESSION:String = null;
-}
-
-```
-
-and you should be good to go there.
+### File Ignorati
+Per i file ignorati, ci ho già pensato io. "APIStuff.hx" è già nel Codice Sorgente.
 
 ### Compiling game
 NOTE: If you see any messages relating to deprecated packages, ignore them. They're just warnings that don't affect compiling
@@ -95,7 +78,3 @@ To run it from your desktop (Windows, Mac, Linux) it can be a bit more involved.
 
 Once that is done you can open up a command line in the project's directory and run `lime test windows -debug`. Once that command finishes (it takes forever even on a higher end PC), you can run FNF from the .exe file under export\release\windows\bin
 As for Mac, 'lime test mac -debug' should work, if not the internet surely has a guide on how to compile Haxe stuff for Mac.
-
-### Additional guides
-
-- [Command line basics](https://ninjamuffin99.newgrounds.com/news/post/1090480)
