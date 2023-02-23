@@ -180,18 +180,22 @@
 	<!-- _________________________________ Custom _______________________________ -->
 
 	<!--Place custom nodes like icons here (higher priority to override the HaxeFlixel icon)-->
-	
+
 	<icon path="art/icon16.png" size='16'/>
 	<icon path="art/icon32.png" size='32'/>
 	<icon path="art/icon64.png" size='64'/>
 	<icon path="art/iconOG.png" />
 
-
 	<!-- <haxedef name="SKIP_TO_PLAYSTATE" if="debug" /> -->
 	
 	<haxedef name="CAN_OPEN_LINKS" unless="switch"/>
-	<haxedef name="CAN_CHEAT" if="switch debug"/>
-	
+	<!-- Mettiamo anche qui ios, che nel mio caso non serve. -->
+	<haxedef name="CAN_CHEAT" if="ios"/>
+
+	<!-- Mettiamo ios, tanto non verrà compilato per ora. -->
+	<!-- In caso qualcuno volesse, basta che cambi "ios" con qualcos'altro. -->
+	<haxedef name="OLD_INPUT" if="ios" /> <!-- Cambia questo nel caso! -->
+
 	<!-- <haxedef name="CLEAR_INPUT_SAVE"/> -->
 	
 	<section if="newgrounds">
